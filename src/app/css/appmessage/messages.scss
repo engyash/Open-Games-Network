@@ -1,0 +1,143 @@
+// Mixins
+@import "../lib/_mixins";
+
+
+#app-messages { position: relative;
+
+	/* GLOBALS */
+	a { cursor: pointer; }
+	#process-indicator { position: absolute; top: 0; right: 0; display: none; }
+	.btn-toolbar { margin-top: 0; margin-bottom: 20px;
+	    div.btn-group { display: inline; }
+		.dropdown-menu input[type=text] { margin-left: 1em; margin-right: 1em; }
+    }
+
+
+	/* MESSAGE FOLDERS SIDEBAR */
+	#view-messagefolders {
+		.folderlist { position: relative;
+			a, li { cursor: pointer; }
+			li { position: relative; }
+			.active { font-weight: bold; }
+			.has-unread-messages { font-weight: bold; }
+			.edit-folder { position: absolute; z-index: 1; right: 19px; margin-top: 6px; @include opacity(20); 
+				&:hover { @include opacity(100); }
+			}
+			.delete-folder { position: absolute; z-index: 1; right: 3px; margin-top: 6px; @include opacity(20); 
+				&:hover { @include opacity(100); }
+			}
+		}
+	}
+
+
+	/* MESSAGES LIST */
+	#view-messagelist { display: none; 
+        .messagelist {
+	        .options { width: 25px; text-align: center; }
+	        .details { width: 20px; text-align: left; }
+	        .from { width: 150px; text-align: left; white-space: nowrap;
+		        img { max-width: 24px; max-height: 24px; margin-right: 10px; }
+	        }
+	        .summary { width: auto; }
+	        .received { width: 120px; text-align: right; white-space: nowrap; }
+	        .clickable { cursor: pointer; }
+
+	        tr.status-2 {
+		        td { background-color: #eeeeee; }
+	        }
+	        tr.status-1 {
+		        td { background-color: #ffffff; font-weight: bold; }
+	        }
+	        tr.status-highlighted {
+		        td { background-color: #ffffcc; }
+	        }
+	        .nomessages {
+		        text-align: center; color: #999;
+	        }
+        }
+	}
+
+
+	/* CREATE MESSAGE */
+	#view-newmessage {
+		.newmessagestatus { display: inline-block; *display: inline; padding: 4px 12px; margin-bottom: 0; *margin-left: .3em; font-size: 14px; line-height: 20px; text-align: center; vertical-align: middle; } 
+		.newmessage { background-color: #eeeeee; padding: 10px;
+			.attachments input[type=file] { display: block; }
+
+			// jquery.tagsinput
+			.tagsinput {  
+				.tag { border: 1px solid #a5d24a; @include border-radius(2px); display: block; float: left; padding: 2px 5px; text-decoration: none; background: #cde69c; color: #638421; margin-right: 5px; margin-bottom: 5px; font-size: 13px; 
+					a { font-weight: bold; color: #82ad2b; text-decoration: none; font-size: 11px; }
+				}
+				input { width: 180px; margin: 0px; font-size: 13px; border: 1px solid transparent; padding: 5px; background: transparent; color: #000; outline: 0px; margin-right: 5px; margin-bottom: 5px; }
+				div { display: block; float: left; }
+			}
+			.not_valid { background: #FBD8DB !important; color: #90111A !important; }
+
+
+			// To Field
+			.to-options { margin-bottom: 0.5em;
+				.dropdown-menu-large { min-width: 250px; }
+				.checkbox input[type="checkbox"] { margin-left: 0; margin-right: 5px; }
+			}
+			.to-field { border: 1px solid #CCC; background: #FFF; padding: 5px; margin-bottom: 1em; }
+			.to-groups { 
+				.group { border: 1px solid #a5d24a; margin-bottom: 0.5em; @include border-radius(2px);
+					header { border-bottom: 1px solid #a5d24a; background: #cde69c; color: #638421; padding: 2px 5px; font-size: 12px;
+						[class^="icon-"],
+						[class*=" icon-"] { position: relative; top: -1px; @include opacity(50);
+							&:hover { @include opacity(75); }
+						}
+						.remove-group { float: right; }
+					}
+					article { padding: 5px; background: lighten(#cde69c, 20);
+						ul { margin: 0; padding: 0; list-style-type: none;
+							li { margin: 0; padding: 0; display: block; float: left;
+								&.checkbox input[type="checkbox"] { margin-left: 0; margin-right: 5px; }
+								label { font-size: 12px; }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	/* VIEW MESSAGE */
+	#view-viewmessage { display: none; 
+		.viewmessage { background-color: #eeeeee; padding: 10px;
+			.from {
+				.avatar { float: left; margin-right: 10px; max-height: 40px; max-width: 40px; }
+				.name { height: 40px; line-height: 40px; white-space: nowrap; }
+			}
+			.options { height: 40px; line-height: 40px; white-space: nowrap; 
+				.btn-group { float: right; }
+				.age { height: 40px; line-height: 40px; text-align: right; float: right; margin-right: 15px; }
+			}
+
+			.well-white { background-color: white; }
+
+			h3 { font-size: 28px; margin: 0; padding: 0; }
+
+			.replybox { font-size: 12px; color: #999;
+				.avatar { float: left; max-width: 24px; max-height: 24px; margin-right: 10px; }
+			}
+		}
+
+		.recipientlist { height: 240px; overflow-y: scroll;
+			.options { width: 25px; text-align: center; }
+			.id { width: 70px; text-align: left; }
+			.description { text-align: left; 
+				.avatar { max-width: 16px; max-height: 16px; float: left; margin-right: 10px; }
+				.name { white-space: nowrap; }
+			}
+		}
+
+		.nav-seamless { margin-bottom: 0; }
+		.nav-seamless + .tab-content { height: 240px; border: 1px solid #CCC; border-top: 0; padding: 30px 10px 10px 10px; }
+		.selectedrecipients { padding-top: 15px; 
+			input { width: 97%; }
+		}
+	}
+}

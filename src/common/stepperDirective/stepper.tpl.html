@@ -1,0 +1,4 @@
+<div class="clearfix stepper stepper-{{stepsCount}}">
+    <a data-ng-repeat="step in steps" class="complete" ng-class="{'last' : $last}" href="#{{step.route}}"><t>{{step.name}}</t></a>
+    <a data-ng-repeat="step in incomplete"><t>{{step.name}}</t></a>
+</div>

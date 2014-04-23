@@ -1,0 +1,84 @@
+<!doctype html>
+<html ng-app="ngOgsnApps" ng-controller="AppCtrl">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="Description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title ng-bind="pageTitle"></title>
+    <!--<link rel="icon" href="assets/favicon.ico" type="image/x-icon">-->
+  <!--  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">-->
+    <!-- compiled CSS -->
+    <% styles.forEach( function ( file ) { %>
+  <link rel="stylesheet" type="text/css" href="<%= file %>" />
+    <% }); %>
+  <!--[if IE 7>
+  <link rel="stylesheet" href="assets/font-awesome-ie7.min.css />
+  <![endif]-->
+    <!--  <script src="//j.maxmind.com/app/geoip.js"></script> -->
+    <!-- compiled Javascript -->
+    <% scripts.forEach( function ( file ) { %>
+  <script type="text/javascript" src="<%= file %>"></script>
+    <% }); %>
+  
+        
+    
+          <!--Left sidebar start-->
+</head>
+<body ng-class="setBodyClass()">
+    <section id="container">
+      <!--sidebar start-->
+            <div ng-include="'left.tpl.html'"></div>
+      <!--sidebar end-->
+  <!--main content start-->
+    <section id="main-content">
+    <section class="wrapper">
+   
+                <div ng-include="'header.tpl.html'"></div>
+                <div ui-view="main" class="innerwrapper" autoscroll="false"></div>
+  </section>
+  </section>
+  <!--main content end-->
+</section>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            /* ---------- Menu toggle for diff width  ---------- */
+
+            $("#Togglebtn").removeClass("hidden-xs");
+
+            $("#icoforlgmdsm").on("click", function () {
+                $("#menu").toggle();
+                $("#LG").toggle();
+            });
+            $("#toggle-menu").on("click", function () {
+                $("#MBL").removeClass("hidden-xs");
+                $("#menu").toggle();
+                $("#MBL").toggle();
+            });
+        
+            /* ---------- Menu toggle for diff width end  ---------- */
+
+
+            /* ---------- Submenu  ---------- */
+            $('.dropmenu').click(function (e) {
+                e.preventDefault();
+                // add remove class active
+                $('.nav').find('li').removeClass('active');
+                $(this).parent().addClass('active');
+                // toggle  
+                var $this = $(this);
+                var isVisible = $this.next().is(":visible");
+                $('.dropdown ul').hide("slow");
+                if (isVisible) {
+                    $this.next().hide("slow");
+                }
+                else {
+                    $this.next().show("slow");
+                }
+            });
+
+        });
+
+    </script>
+</body>
+</html>

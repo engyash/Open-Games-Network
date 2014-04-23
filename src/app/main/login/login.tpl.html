@@ -1,0 +1,140 @@
+﻿
+<section class="row container" style="width: 100%;">
+    <div id="enroll">
+        <div class="row">
+            <div class="row" id="Div1">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
+                <div class="col-lg-9 col-md-9  col-sm-9  col-xs-12">
+                    <header id="header1">
+                        <div id="siteheader1">
+                            <div id="headerbar1" class="inner clearfix pull-left">
+                                <a id="logo" href="/">
+                                    <div class="custom-logo size-auto"></div>
+                                </a>
+                                <br />
+                                <br />
+                                <hr id="header_hr" class="hr_1200 hr_980" />
+                            </div>
+                        </div>
+                    </header>
+                </div>
+            </div>
+
+            <div class="row" id="login">
+
+                <div class="col-lg-3 col-md-3 col-sm-3"></div>
+                <div class="col-lg-9 col-md-9  col-sm-9  col-xs-9">
+
+
+                    <div class="col-lg-12  col-md-12  col-sm-12  col-xs-12">
+                        <h1 class="text-left formonly"><b>Welcome to OGSN</b></h1>
+                        <h4 style="color: red;" ng-show="showMessage"></h4>
+                    </div>
+
+
+
+                    <div class="col-lg-7 col-md-7  col-sm-7  col-xs-12">
+                        <div class="form-horizontal min">
+
+
+                            <div class="form-group">
+                                <div class="col-sm-10">
+
+                                    <input id="txtLoginName" ng-model="current.login.userid" type="text" validate noempty="true" class="form-control btn_ef" enterclick="login()" placeholder="Login" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-10">
+
+                                    <input id="txtPassword" type="password" ng-model="current.login.password" validate noempty="true" class="form-control  btn_ef" enterclick="login()" placeholder="Password" />
+                                </div>
+                                <div class="col-md-9  col-sm-10  col-xs-12 ">
+                                    <div class="checkbox">
+                                        <input id="chkRememberMe" type="checkbox" />
+                                        Remember me on this computer
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-10 col-xs-12">
+
+                                    <button type="button" id="cmdSignIn" value="Login" class="btn btn-default btn-md col-md-12 col-sm-12 col-xs-12 gray-light btn2_ef" trigger-check="true" validate success="login()">
+                                        &nbsp; <b>LOGIN</b>
+                                    </button>
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <footer id="footer">
+        <div class="row">
+            <div id="sitefooter">
+                <div id="sitefootercontent">
+                    <div id="helpbar">
+                        <div class="inner">
+                        </div>
+                    </div>
+                    <div id="footerbar">
+                        <div class="inner">
+                            <ul class="clearfix">
+                                <li>
+                                    <div id="Div2">
+                                        Need Help?
+                                    </div>
+                                </li>
+                                <li>
+                                    <div id="Div5">
+                                        |
+                                    </div>
+                                </li>
+                                <li>
+                                    <div id="Div3">
+                                        Executive Support OgsnApps or XXX-XXX-XXXX
+                                    </div>
+                                </li>
+                                <li>
+                                    <div id="Div7">
+                                        |
+                                    </div>
+                                </li>
+                                <li>
+                                    <div id="Div6">
+                                        customerservice@OgsnApps.com
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        |
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        © 2014 Copyright OgsnApps International, Inc. All Rights Reserved.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</section>

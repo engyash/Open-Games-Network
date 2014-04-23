@@ -1,0 +1,330 @@
+#app-messages {
+    position: relative;
+    /* GLOBALS */
+    /* MESSAGE FOLDERS SIDEBAR */
+    /* MESSAGES LIST */
+    /* CREATE MESSAGE */
+    /* VIEW MESSAGE */
+}
+    #app-messages a {
+        cursor: pointer;
+    }
+    #app-messages #process-indicator {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: none;
+    }
+    #app-messages .btn-toolbar {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+        #app-messages .btn-toolbar div.btn-group {
+            display: inline;
+        }
+        #app-messages .btn-toolbar .dropdown-menu input[type=text] {
+            margin-left: 1em;
+            margin-right: 1em;
+        }
+    #app-messages #view-messagefolders .folderlist {
+        position: relative;
+    }
+        #app-messages #view-messagefolders .folderlist a, #app-messages #view-messagefolders .folderlist li {
+            cursor: pointer;
+        }
+        #app-messages #view-messagefolders .folderlist li {
+            position: relative;
+            line-height: 32px;
+        }
+        #app-messages #view-messagefolders .folderlist .active {
+            font-weight: bold;
+        }
+        #app-messages #view-messagefolders .folderlist .has-unread-messages {
+            font-weight: bold;
+        }
+        #app-messages #view-messagefolders .folderlist .edit-folder {
+            position: absolute;
+            z-index: 1;
+            right: 19px;
+            margin-top: 6px;
+            opacity: 0.2;
+            filter: alpha(opacity=20);
+        }
+            #app-messages #view-messagefolders .folderlist .edit-folder:hover {
+                opacity: 1;
+                filter: alpha(opacity=100);
+            }
+        #app-messages #view-messagefolders .folderlist .delete-folder {
+            position: absolute;
+            z-index: 1;
+            right: 3px;
+            margin-top: 6px;
+            opacity: 0.2;
+            filter: alpha(opacity=20);
+        }
+            #app-messages #view-messagefolders .folderlist .delete-folder:hover {
+                opacity: 1;
+                filter: alpha(opacity=100);
+            }
+    #app-messages #view-messagelist {
+        display: none;
+    }
+        #app-messages #view-messagelist .messagelist .options {
+            width: 25px;
+            text-align: center;
+        }
+        #app-messages #view-messagelist .messagelist .details {
+            width: 20px;
+            text-align: left;
+        }
+        #app-messages #view-messagelist .messagelist .from {
+            width: 150px;
+            text-align: left;
+            white-space: nowrap;
+        }
+            #app-messages #view-messagelist .messagelist .from img {
+                max-width: 24px;
+                max-height: 24px;
+                margin-right: 10px;
+            }
+        #app-messages #view-messagelist .messagelist .summary {
+            width: auto;
+        }
+        #app-messages #view-messagelist .messagelist .received {
+            width: 120px;
+            text-align: right;
+            white-space: nowrap;
+        }
+        #app-messages #view-messagelist .messagelist .clickable {
+            cursor: pointer;
+        }
+        #app-messages #view-messagelist .messagelist tr.status-2 td {
+            background-color: #eeeeee;
+        }
+        #app-messages #view-messagelist .messagelist tr.status-1 td {
+            background-color: #AD9DC0;
+            font-weight: bold;
+        }
+        #app-messages #view-messagelist .messagelist tr.status-highlighted td {
+           /*background-color: #ffffcc; */
+        }
+        #app-messages #view-messagelist .messagelist .nomessages {
+            text-align: center;
+            color: #999;
+        }
+    #app-messages #view-newmessage .newmessagestatus {
+        display: inline-block;
+        *display: inline;
+        padding: 4px 12px;
+        margin-bottom: 0;
+        *margin-left: .3em;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    #app-messages #view-newmessage .newmessage {
+        background-color: #eeeeee;
+        padding: 10px;
+    }
+        #app-messages #view-newmessage .newmessage .attachments input[type=file] {
+            display: block;
+        }
+        #app-messages #view-newmessage .newmessage .tagsinput .tag {
+            border: 1px solid #a5d24a;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            display: block;
+            float: left;
+            padding: 2px 5px;
+            text-decoration: none;
+            background: #cde69c;
+            color: #638421;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-size: 13px;
+        }
+            #app-messages #view-newmessage .newmessage .tagsinput .tag a {
+                font-weight: bold;
+                color: #82ad2b;
+                text-decoration: none;
+                font-size: 11px;
+            }
+        #app-messages #view-newmessage .newmessage .tagsinput input {
+            width: 180px;
+            margin: 0px;
+            font-size: 13px;
+            border: 1px solid transparent;
+            padding: 5px;
+            background: transparent;
+            color: #000;
+            outline: 0px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        #app-messages #view-newmessage .newmessage .tagsinput div {
+            display: block;
+            float: left;
+        }
+        #app-messages #view-newmessage .newmessage .not_valid {
+            background: #FBD8DB !important;
+            color: #90111A !important;
+        }
+        #app-messages #view-newmessage .newmessage .to-options {
+            margin-bottom: 0.5em;
+        }
+            #app-messages #view-newmessage .newmessage .to-options .dropdown-menu-large {
+                min-width: 250px;
+            }
+            #app-messages #view-newmessage .newmessage .to-options .checkbox input[type="checkbox"] {
+                margin-left: 0;
+                margin-right: 5px;
+            }
+        #app-messages #view-newmessage .newmessage .to-field {
+            border: 1px solid #CCC;
+            background: #FFF;
+            padding: 5px;
+            margin-bottom: 1em;
+        }
+        #app-messages #view-newmessage .newmessage .to-groups .group {
+            border: 1px solid #a5d24a;
+            margin-bottom: 0.5em;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+        }
+            #app-messages #view-newmessage .newmessage .to-groups .group header {
+                border-bottom: 1px solid #a5d24a;
+                background: #cde69c;
+                color: #638421;
+                padding: 2px 5px;
+                font-size: 12px;
+            }
+                #app-messages #view-newmessage .newmessage .to-groups .group header [class^="icon-"],
+                #app-messages #view-newmessage .newmessage .to-groups .group header [class*=" icon-"] {
+                    position: relative;
+                    top: -1px;
+                    opacity: 0.5;
+                    filter: alpha(opacity=50);
+                }
+                    #app-messages #view-newmessage .newmessage .to-groups .group header [class^="icon-"]:hover,
+                    #app-messages #view-newmessage .newmessage .to-groups .group header [class*=" icon-"]:hover {
+                        opacity: 0.75;
+                        filter: alpha(opacity=75);
+                    }
+                #app-messages #view-newmessage .newmessage .to-groups .group header .remove-group {
+                    float: right;
+                }
+            #app-messages #view-newmessage .newmessage .to-groups .group article {
+                padding: 5px;
+                background: #f6fbed;
+            }
+                #app-messages #view-newmessage .newmessage .to-groups .group article ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+                }
+                    #app-messages #view-newmessage .newmessage .to-groups .group article ul li {
+                        margin: 0;
+                        padding: 0;
+                        display: block;
+                        float: left;
+                    }
+                        #app-messages #view-newmessage .newmessage .to-groups .group article ul li.checkbox input[type="checkbox"] {
+                            margin-left: 0;
+                            margin-right: 5px;
+                        }
+                        #app-messages #view-newmessage .newmessage .to-groups .group article ul li label {
+                            font-size: 12px;
+                        }
+    #app-messages #view-viewmessage {
+        display: none;
+    }
+        #app-messages #view-viewmessage .viewmessage {
+            background-color: #eeeeee;
+            padding: 10px;
+        }
+            #app-messages #view-viewmessage .viewmessage .from .avatar {
+                float: left;
+                margin-right: 10px;
+                max-height: 40px;
+                max-width: 40px;
+            }
+            #app-messages #view-viewmessage .viewmessage .from .name {
+                height: 40px;
+                line-height: 40px;
+                white-space: nowrap;
+            }
+            #app-messages #view-viewmessage .viewmessage .options {
+                height: 40px;
+                line-height: 40px;
+                white-space: nowrap;
+            }
+                #app-messages #view-viewmessage .viewmessage .options .btn-group {
+                    float: right;
+                }
+                #app-messages #view-viewmessage .viewmessage .options .age {
+                    height: 40px;
+                    line-height: 40px;
+                    text-align: right;
+                    float: right;
+                    margin-right: 15px;
+                }
+            #app-messages #view-viewmessage .viewmessage .well-white {
+                background-color: white;
+            }
+            #app-messages #view-viewmessage .viewmessage h3 {
+                font-size: 28px;
+                margin: 0;
+                padding: 0;
+            }
+            #app-messages #view-viewmessage .viewmessage .replybox {
+                font-size: 12px;
+                color: #999;
+            }
+                #app-messages #view-viewmessage .viewmessage .replybox .avatar {
+                    float: left;
+                    max-width: 24px;
+                    max-height: 24px;
+                    margin-right: 10px;
+                }
+        #app-messages #view-viewmessage .recipientlist {
+            height: 240px;
+            overflow-y: scroll;
+        }
+            #app-messages #view-viewmessage .recipientlist .options {
+                width: 25px;
+                text-align: center;
+            }
+            #app-messages #view-viewmessage .recipientlist .id {
+                width: 70px;
+                text-align: left;
+            }
+            #app-messages #view-viewmessage .recipientlist .description {
+                text-align: left;
+            }
+                #app-messages #view-viewmessage .recipientlist .description .avatar {
+                    max-width: 16px;
+                    max-height: 16px;
+                    float: left;
+                    margin-right: 10px;
+                }
+                #app-messages #view-viewmessage .recipientlist .description .name {
+                    white-space: nowrap;
+                }
+        #app-messages #view-viewmessage .nav-seamless {
+            margin-bottom: 0;
+        }
+            #app-messages #view-viewmessage .nav-seamless + .tab-content {
+                height: 240px;
+                border: 1px solid #CCC;
+                border-top: 0;
+                padding: 30px 10px 10px 10px;
+            }
+        #app-messages #view-viewmessage .selectedrecipients {
+            padding-top: 15px;
+        }
+            #app-messages #view-viewmessage .selectedrecipients input {
+                width: 97%;
+            }

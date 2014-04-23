@@ -1,0 +1,46 @@
+<span ng-class="loginCheck()">
+    <header id="header">
+<header class="header fixed-top clearfix">
+        <div class="brand">
+          <div class="sidebar-toggle-box">
+            <div class="fa fa-bars"></div>
+          </div>
+        </div>
+        <!--logo start-->
+        <!--<div class="logo"><a href="#"><img src="./assets/img/logo.png" alt=""></a></div>-->
+        <!--logo end-->
+        <div class="binding text-right pull-right"> {{order.CustomerProfile.FirstName}} {{order.CustomerProfile.Lastname}} <br>
+          ID: {{order.CustomerProfile.CustomerID}} </div>
+      </header>
+<div class="row">
+    <div class="col-sm-12">
+        <section class="panel1">
+            <header class="panel-heading m_20"> 
+                <div ng-controller="HeaderCtrl">
+           <!-- <ul class="breadcrumb pull-left">
+                <li data-ng-repeat="breadcrumb in breadcrumbs.getAll()" >
+                    <span ng-switch="($index)==0">
+                        <img ng-src="{{breadcrumb.image}}" class="breadcrumbImg"/>
+                      
+                        <strong ng-switch-when="true" style="text-transform: capitalize; font-size: 15px; padding-left: 6px;line-height:15px;vertical-align:bottom;"><t>{{breadcrumb.name}}</t></strong>
+                    </span>
+                    <span ng-switch="($index)==1">
+                        <strong ng-switch-when="true" class="divider">&nbsp;&raquo</strong>
+                        <strong ng-switch-when="true" style="text-transform: capitalize; font-size: 15px; padding-left: 6px;line-height:15px;vertical-align:bottom;"><t>{{breadcrumb.name}}</t></strong>
+                    </span>
+                </li>
+            </ul>-->
+          
+             <!-- <div class="pull-right">
+                  <select class="form-control lag-widht" id="Select1"
+                    ng-options="language.name for language in countryModel.selectedCountry.languages"
+                    ng-model="order.settings.locale"
+                    ng-change="updateLocale()">
+                </select>
+              </div>-->
+              <div class="clearfix"></div>
+            </header>
+          </section>
+    </div>
+</div>
+        </header></span>

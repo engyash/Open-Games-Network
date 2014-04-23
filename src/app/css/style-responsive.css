@@ -1,0 +1,60 @@
+@media (min-width:768px) and (max-width: 1024px) {
+
+.wrapper { width:600px;}
+#sidebar { width:55px;}
+ul.sidebar-menu li a span { display:none;}
+#main-content { margin-left:57px;}
+.tab-graph { width:435px;}
+.Main_img_Bg { width:145px;}
+
+.graph-body { min-height:207px;}
+
+
+
+
+.Graph-tab_bg  { font-size:100%;}
+.info-vol span { line-height:16px;}
+.Right_img_Bg { width:100%;}
+.right-link { width:48%; float:left;}
+
+
+
+
+
+
+
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12
+{ float:left;}
+
+}
+
+@media (min-width:319px) and (max-width:767px) {
+
+.wrapper { width:457px;}
+#sidebar { z-index:997;}
+.brand { z-index:998;}
+#main-content { margin-left:0px;}
+.tab-graph { width:100%; margin-bottom:20px; float:left;}
+.Main_img_Bg { width:145px; float:right;}
+.lag-widht { width:100px;}
+.Graph-next { width:16px; height:16px; line-height:14px; right:7px;}
+.Graph-prv { width:16px; height:16px; line-height:14px; left:7px;}
+
+.graph { float:left;}
+.graph-tab-right { float:left;}
+.Graph-tab_bg  { font-size:100%;}
+.info-vol { padding:4px 10px 4px; line-height:10px; }
+.info-vol span { font-size:11px;}
+.Right_img_Bg { width:290px; float:left;}
+.right-link { width:100%; float:left;}
+
+
+
+
+
+
+
+
+
+}

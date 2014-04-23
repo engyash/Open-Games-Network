@@ -1,0 +1,101 @@
+﻿<script language="JavaScript">
+    var objappVersion = navigator.appVersion;
+    var objAgent = navigator.userAgent;
+    var objbrowserName = navigator.appName;
+    var objfullVersion = '' + parseFloat(navigator.appVersion);
+    var objBrMajorVersion = parseInt(navigator.appVersion, 10);
+    var objOffsetName, objOffsetVersion, ix;
+
+    // In Chrome
+    if ((objOffsetVersion = objAgent.indexOf("Firefox")) != -1) {
+        $("#leftcss").toggleClass('moz');
+    }
+    else if ((objOffsetVersion = objAgent.indexOf("MSIE")) != -1 || (objOffsetVersion = objAgent.indexOf("IE")) != -1 || (objOffsetVersion = objAgent.indexOf("InternetExplorer")) != -1 || (objOffsetVersion = objAgent.indexOf("msie")) != -1) {
+        $("#leftcss").toggleClass('ie');
+    }
+    else if (Object.hasOwnProperty.call(window, "ActiveXObject") && !window.ActiveXObject) {
+        $("#leftcss").toggleClass('ie');
+    }
+    else {
+        $("#leftcss").toggleClass('cro');
+    }
+
+</script>
+<div id="left" class="ng-scope" ng-show="loginpage">
+        <!--sidebar start-->
+        <aside>
+    <div id="sidebar" class="nav-collapse">
+      <!-- sidebar menu start-->
+      <ul class="sidebar-menu" id="nav-accordion">
+        <li> <a class="active" ng-click="gotolocation('dashboard')"><i class="fa fa-dashboard"></i><span><t>dashboard</t></span></a></li>
+
+        <li class="sub-menu" ng-show="current.Customer.CustomerType === '1'"><a href="javascript:;"><i class="fa fa-sitemap"></i><span><t>organization</t></span></a>
+          <ul class="sub">
+                <li ng-show="current.Customer.CustomerType === '1'"><a class="submenu" ng-click="gotolocation('organization/DownlineAutoships')"><t>downline_autoships</t></a></li>
+                <li><a ng-click="gotolocation('organization/OrganizationDetails')"><t>details</t></a></li>
+                <li><a ng-click="gotolocation('organization/placement-org')"><t>placement</t></a></li>
+                <li><a ng-click="gotolocation('organization/RecentDownlineOrders')"><t>business_activity</t></a></li>
+                <li><a ng-click="gotolocation('organization/performanceReports')"><t>performance_reports</t></a></li>
+                <li><a  href="https://enrollment.josephs.com/#/enroll/start/{{order.CustomerProfile.MainCountry}}/{{current.Customer.CustomerID}}" target="_blank"><t>enroll_new</t></a></li>
+          </ul>
+        </li>
+        <li class="sub-menu" ng-show="current.Customer.CustomerType === '1'"> <a> <i class="fa fa-credit-card"></i> <span><t>commissions</t></span> </a>
+          <ul class="sub">
+             <li><a ng-click="gotolocation('commission/commissions')"><t>commission_summary</t></a></li>
+          </ul>
+        </li>
+        <li class="sub-menu"> <a href="javascript:;"> <i class="fa fa-shopping-cart"></i> <span><t>orders</t></span> </a> 
+              <ul class="sub">
+                <li><a ng-click="gotolocation('orders/order-history')"><t>order_history</t></a></li>
+                <li><a ng-click="gotolocation('autoships/autoship-list')"><t>autoships</t></a></li>
+                <li><a class="submenu" href="https://shop.josephs.com?ltoken={{current.ShopToken}}" target="_blank"><t>shop</t></a></li>               
+            </ul>
+        </li>
+        <li class="sub-menu"> <a href="javascript:;" id="leftcss"> <i class="fa fa-briefcase"></i> <span><t>tools</t></span> <div  class="circle" ng-show="current.UnreadCount > 0">{{current.UnreadCount}}</div></a>
+          <ul class="sub">
+            <li ng-show="current.Customer.CustomerType === '1'"><a ng-click="gotolocation('messages/MsRedirect')"><t>messages</t></a></li>
+                <li ng-show="current.Customer.CustomerType === '1'"><a ng-click="gotolocation('event/events')"><t>calendar</t></a></li>
+                <li ng-show="current.Customer.CustomerType === '1'"><a ng-click="gotolocation('resource-library/resources')"><t>resource_library</t></a></li>
+                <li><a ng-click="gotolocation('customer-enquiry')"><t>feedback_support</t></a></li>
+                <li ng-show="current.Customer.CustomerType === '1'"><a ng-click="gotolocation('website')"><t>website</t></a></li>
+                <li ng-show="current.Customer.CustomerType === '1'"><a ng-click="gotolocation('tools/contacts')"><t>contacts</t></a></li>
+                <li ng-show="current.Customer.IsAdmin"><a  href="http://dsc.myjosephs.com/Login.aspx?token={{current.SilentLoginToken}}&Referrer=1"><t>dsc_tools</t></a></li>
+                <li ng-show="current.Customer.CustomerType === '1'"><a ng-click="gotolocation('tools/josephs-awards-card')"><t>josephs_awards</t></a></li>
+                 <li ng-show="current.Customer.CustomerType === '1'"><a class="submenu" ng-click="gotolocation('upgrade/upgrade')"><t>premium_subscription</t></a></li>
+          </ul>
+        </li>
+            <li class="sub-menu" ng-show="current.Customer.IsAdmin"> <a href="javascript:;" id="A1"> <i class="fa fa-briefcase"></i> <span><t>dsc_tools</t></span></a>
+              <ul class="sub">
+                 <li><a ng-click="gotolocation('dsc-tools/inventory')"><t>Inventory</t></a></li>
+                <li><a ng-click="gotolocation('dsc-tools/salesorder')"><t>SalesOrderReport</t></a></li>
+                 <li><a ng-click="gotolocation('dsc-tools/salesitemreport')"><t>SalesItemReport</t></a></li>
+                 <li><a ng-click="gotolocation('dsc-tools/dscemployee')"><t>DSCEmployee</t></a></li>
+             </ul>
+                </li>  
+        <li class="sub-menu"> <a href="javascript:;"> <i class="fa fa-cogs"></i> <span><t>settings</t></span> </a>
+          <ul class="sub">
+            <li><a ng-click="gotolocation('settings/profile')"><t>personal_settings</t></a></li>
+                <li ng-show="current.Customer.CustomerType === '1'" class="hide"><a ng-click="gotolocation('settings/website')"><t>website_profile</t></a></li>
+           
+          </ul>
+        </li>
+              <li class="sub-menu" ng-show="current.Customer.IsAdmin">
+            <a href="javascript:;">
+              <i class="fa fa-power-offfa fa-cogs"></i>
+                <span class="hidden-tablet mar5"><t>global_item</t></span></a>
+           
+            <ul class="sub">
+				<li><a class="submenu" ng-click="gotolocation('tools/translations')"><t>Translations</t></a></li>
+                <li><a ng-click=""><t>content_blocks</t></a></li>
+                <li><a ng-click="gotolocation('resource-library/resources')"><t>resource_library</t></a></li>
+                <li><a ng-click="gotolocation('tools/training')"><t>training</t></a></li>
+            </ul>
+        </li>
+        <li> <a ng-click="logout()"> <i class="fa fa-power-off"></i> <span><t>logout</t></span> </a> </li>
+        
+      </ul>
+      <!-- sidebar menu end-->
+    </div>
+  </aside>
+        <!--sidebar end-->
+    </div>
